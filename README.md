@@ -1,2 +1,2 @@
 # cookingBlog
-It will be using the MERN Stack except Ract
+It will be using the MERN Stack except React
