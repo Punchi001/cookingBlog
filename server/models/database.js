@@ -7,5 +7,6 @@ db.once('open', function() {
     console.log('Connected');
 });
 
-// Models
+// Models Schema
 require('./Category');
+require('./Recipe');

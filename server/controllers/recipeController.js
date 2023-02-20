@@ -1,5 +1,7 @@
 require('../models/database');
 const Category = require('../models/Category');
+const Recipe= require('../models/Recipe');
+
 
 // Getting our homepage
 
@@ -40,9 +42,23 @@ exports.exploreCategories = async(req, res) => {
 }
 
 
+//func for inserting data in our database
+
+async function insertDummyRecipeData() {
+    try {
+        const categories = [
+          
+        ];
+
+        await Category.create(categories);
+    } catch (error) {
+        console.log('Error:', error);
+    }
+}
+insertDummyRecipeData();
 
 
-// func for inserting datat in our database
+// func for inserting data in our database
 
 // async function insertDummyCategoryData() {
 //     try {
