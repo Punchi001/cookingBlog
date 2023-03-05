@@ -99,6 +99,28 @@ exports.exploreRecipe = async(req, res) => {
 }
 
 
+// making a post request using the search field
+
+exports.searchRecipe = async(req,res) =>{
+
+    // name id searchTerm
+
+    try {
+
+        let searchTerm = req.body.searchTerm;
+
+        let recipe = await Recipe.find({$text:{$search:searchTerm, $diacriticSensitive:true}});
+        res.json(recipe);        
+    } catch (error) {
+
+        res.status(500).send({message: error.message || "Error Occured "});
+
+    }
+
+    res.render('search',  {title: 'Cooking Blog - search'})
+}
+
+
 
 
 
