@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+require('dotenv').config();
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-    console.log('Connected');
-});
+const uri = process.env.MONGODB_URI;
 
-// Models Schema
-require('./Category');
-require('./Recipe');
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+        console.log('Connected to MongoDB');
+
+        // Models Schema
+        require('./Category');
+        require('./Recipe');
+    })
+    .catch(error => console.error('Error connecting to MongoDB', error));
