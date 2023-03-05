@@ -7,6 +7,9 @@ const Recipe= require('../models/Recipe');
 
 exports.homepage = async(req, res) => {
 
+
+
+
     try {
 
         const limitNumber = 5;
@@ -30,6 +33,7 @@ exports.homepage = async(req, res) => {
         
     }
 }
+
 
 
 // Getting our Categories page 
@@ -85,6 +89,7 @@ exports.exploreRecipe = async(req, res) => {
   
         res.render('recipe', { title: 'Cooking Blog - Recipe',recipe});
 
+
         
     } catch (error) {
 
@@ -92,7 +97,6 @@ exports.exploreRecipe = async(req, res) => {
         
     }
 }
-
 
 
 
