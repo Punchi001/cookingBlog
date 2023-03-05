@@ -62,7 +62,7 @@ exports.exploreCategoriesByID = async(req, res) => {
         let categoryId = req.params.id;
 
         const limitNumber = 20;
-        const categoryById = await Category.find({'category':categoryId}).limit(limitNumber);
+        const categoryById = await Recipe.find({'category':categoryId}).limit(limitNumber);
   
         res.render('categories', { title: 'Cooking Blog - Categories' ,categoryById});
 
