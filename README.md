@@ -1,5 +1,10 @@
 # cookingBlog
 
+![A slideshow how my web site looks like](public/images/Screenshot_20230306_150300.gif)
+
+
+
+
 It will be using the MERN Stack except React
 
 
@@ -12,4 +17,3 @@ it holds sensitive database login credentials which must not be shared.
 Youtube channel: https://www.youtube.com/@RaddyDev
 
 
-![A slideshow how my web site looks like](public/images/Screenshot_20230306_150300.gif)
