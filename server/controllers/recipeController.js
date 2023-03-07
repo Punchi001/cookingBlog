@@ -162,3 +162,9 @@ exports.exploreRandom = async(req, res) => {
     }
 }
 
+// getting the submitRecipe page
+
+exports.submitRecipe = async(req, res) => {
+    res.render('submit-recipe', {title:'Cooking Blog - Submit Recipe'});
+}
+
