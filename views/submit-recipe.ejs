@@ -1,1 +1,53 @@
-<p>submit</p>
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold"> Submit your Recipe</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead"> Share your amazing recipies with thousand of web developers accros the world. Fill our form to get started</p>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form action="/submit-recipe" enctype="multipart/form-data" method="post">
+      <div class="row g-3">
+        <div class="col-12">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" name="email" id="email">
+        </div>
+        <div class="col-12">
+          <label for="name" class="form-label">Recipe name</label>
+          <input type="text" name="name" id="name">
+        </div>
+        <div class="col-12">
+          <label for="desciption" class="form-label">Describe</label>
+          <textarea name="description" id="description" class="form-control" cols="30" rows="4"></textarea>
+        </div>
+        <div class="col-12">
+          <label for="ingeredients" class="form-label">Describe</label>
+          <small>Example: Ice</small>
+          <input type="text" name="ingeredients">
+        </div>
+        <div class="col-12">
+          <button type="button" class="btn btn-outline-primary" id="addIngredientsBtn"> + Ingredients</button>
+        </div>
+        <div class="col-12">
+          <label for="category">Select Category</label>
+          <select name="category" class="form-select form-control" aria-label="Category">
+            <option selected>Select Category</option>
+            <option value="Thai">Thai</option>
+            <option value="Amercan">Amercan</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Indian">Indian</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <label for="image">Product Image</label>
+          <input type="file" class="form-control" name="image" accept="image/*">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Submit Recipe</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
