@@ -142,6 +142,23 @@ exports.exploreLatest = async(req, res) => {
 }
 
 
+// getting the exploreRandom page 
 
+exports.exploreRandom = async(req, res) => {
 
+    try {
+        let count = await Recipe.find().countDocuments();
+        let random = Math.floor(Math.random() * count);
+        let recipe = await Recipe.findOne().skip(random).exec();
+        
+  
+        res.render('explore-random', { title: 'Cooking Blog - Categories' ,recipe});
+
+        
+    } catch (error) {
+
+        res.status(500).send({message: error.message || "Error Occured "});
+        
+    }
+}
 
