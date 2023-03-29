@@ -2,7 +2,7 @@ const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 
 const app = express();
-const port = process.env.PORT || 7171;
+const port = process.env.PORT || 7170;
 
 require('dotenv').config();
 
