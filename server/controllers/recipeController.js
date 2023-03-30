@@ -74,3 +74,22 @@ exports.exploreRecipe = async (req, res) => {
     res.status(500).send({ message: error.message || "Error Occured " });
   }
 };
+
+// POST/search
+exports.searchRecipe =async(req,res) =>{
+try {
+  let searchTerm =req.body.searchTerm;
+  let recipe =await Recipe.find({ $text: { $search: searchTerm,$diacriticSensitive:True}})
+res.json(recipe);
+
+} catch (error) {
+  res.status(500).send({message: error.message || "Error Occured"})
+  
+}
+
+
+
+
+
+  res.render('search',{title:'Cooking Blog- Search'});
+}
