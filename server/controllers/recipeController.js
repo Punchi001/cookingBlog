@@ -71,7 +71,7 @@ exports.exploreRecipe = async (req, res) => {
 
     res.render('recipe', { title: "Cooking Blog - Recipe", recipe });
   } catch (error) {
-    res.status(500).send({ message: error.message || "Error Occured " });
+     res.status(500).send({ message: error.message || "Error Occured " });
   }
 };
 
@@ -79,7 +79,7 @@ exports.exploreRecipe = async (req, res) => {
 exports.searchRecipe =async(req,res) =>{
 try {
   let searchTerm =req.body.searchTerm;
-  let recipe =await Recipe.find({ $text: { $search: searchTerm,$diacriticSensitive:True}})
+  let recipe =await Recipe.find({ $text: { $search: searchTerm,$diacriticSensitive:true}})
 res.json(recipe);
 
 } catch (error) {
