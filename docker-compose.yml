@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+ backend:
+   container_name: backend_container
+   ports:
+    - 5500:5500
+   build:
+      context: .
+      dockerfile: Dockerfile
+   environment:
+      PORT: 5500
+   networks:
+      backend-net:
+         ipv4_address: 172.100.0.100
+
+
+networks:
+  backend-net:
+   ipam:
+    driver: default
+    config:
+     - subnet: 172.100.0.0/16
