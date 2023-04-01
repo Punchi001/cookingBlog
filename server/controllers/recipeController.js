@@ -103,3 +103,20 @@ exports.exploreLatest = async (req, res) => {
      res.status(500).send({ message: error.message || "Error Occured " });
   }
 };
+
+// GET
+//explorerandom
+// explorerandom as at json
+exports.exploreRandom = async (req, res) => {
+  try {
+     let count =await Recipe.find().countDocuments();
+     let random=Math.floor(Math.random ()*count);
+     let recipe= await Recipe.findOne().skip(random).exec();
+
+   
+
+    res.render('explore-random', { title: "Cooking Blog - Explore Random", recipe });
+  } catch (error) {
+     res.status(500).send({ message: error.message || "Error Occured " });
+  }
+};
