@@ -62,6 +62,7 @@ exports.exploreCategoriesById = async (req, res) => {
   }
 };
 
+// GET
 //recipe  by id
 exports.exploreRecipe = async (req, res) => {
   try {
@@ -88,3 +89,17 @@ try {
 }
   
 }
+
+
+// GET
+//explorelatest
+exports.exploreLatest = async (req, res) => {
+  try {
+    const limitNumber =20;
+    const recipe =await Recipe.find ({}).sort ({ _id : -1}) .limit(limitNumber);
+
+    res.render('explore-latest', { title: "Cooking Blog - Explore Latest", recipe });
+  } catch (error) {
+     res.status(500).send({ message: error.message || "Error Occured " });
+  }
+};
