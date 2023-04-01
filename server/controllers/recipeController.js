@@ -120,3 +120,15 @@ exports.exploreRandom = async (req, res) => {
      res.status(500).send({ message: error.message || "Error Occured " });
   }
 };
+
+// GET
+//submitRecipe
+//
+
+exports.submitRecipe = async (req, res) => {
+
+
+
+  res.render('submit-recipe', { title: "Cooking Blog - Submit Recipe" });
+} 
+;
