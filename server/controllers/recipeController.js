@@ -165,11 +165,14 @@ exports.exploreRandom = async(req, res) => {
 // getting the submitRecipe page
 
 exports.submitRecipe = async(req, res) => {
-    res.render('submit-recipe', { title: 'Cooking Blog - Submit Recipe' });
+    const infoErrorsObj = req.flash('infoErrors');
+    const infoSubmitObj = req.flash('infoSubmit');
+    res.render('submit-recipe', { title: 'Cooking Blog - Submit Recipe', infoErrorsObj, infoSubmitObj });
 }
 
 // posting the submitted recipe 
 
 exports.submitRecipeOnPost = async(req, res) => {
+    req.flash('infoSubmit', 'Recipe has been added');
     res.redirect('/submit-recipe');
 }
